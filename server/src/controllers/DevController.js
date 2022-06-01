@@ -13,6 +13,8 @@ module.exports = {
       if (dev) throw Error(`Dev ${dev.github_username} já foi cadastrado`)
 
       const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`)
+
+      console.log(`apiResponse`, apiResponse)
   
       const { name = login, avatar_url, bio = "" } = apiResponse.data
   
@@ -28,7 +30,7 @@ module.exports = {
       return response.json(dev)
   
     } catch (error) {
-      return response.json({ message: error.message || "Usuário não encontrado" })
+      return response.json({ message: error.message || "Usuário do github não encontrado" })
   
     }
   },
