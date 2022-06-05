@@ -3,6 +3,8 @@ const Dev = require("../models/Dev")
 
 const parseStringAsArray = require("../utils/parseStringAsArray")
 
+const { findConnections, sendMessage } = require("../websocket")
+
 module.exports = {
   async store(request, response)  {
     const { github_username, techs, latitude, longitude } = request.body
@@ -13,8 +15,6 @@ module.exports = {
       if (dev) throw Error(`Dev ${dev.github_username} já foi cadastrado`)
 
       const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`)
-
-      console.log(`apiResponse`, apiResponse)
   
       const { name = login, avatar_url, bio = "" } = apiResponse.data
   
@@ -26,12 +26,15 @@ module.exports = {
       }
   
       dev = await Dev.create({ github_username, name, avatar_url, bio, techs: techsArray, location })
-  
-      return response.json(dev)
+
+      const sendSocketMessageTo = findConnections(techsArray)
+
+      sendMessage(sendSocketMessageTo, "new-dev", dev)
+
+      return response.json({ techsArray })
   
     } catch (error) {
       return response.json({ message: error.message || "Usuário do github não encontrado" })
-  
     }
   },
 

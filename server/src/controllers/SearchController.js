@@ -24,7 +24,7 @@ module.exports = {
         }
       })
 
-      return response.json(devs)
+      return response.json({ devs })
     } catch (error) {
       return response.json({ message: "Não foi possível coletar os devs" })
     }
