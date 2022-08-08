@@ -44,7 +44,7 @@ Open you Terminal and run this commands:
 ```
 git clone https://github.com/JoseVitor-1337/be-the-hero.git
 
-cd be-the-hero
+cd dev-radar
 
 ```
 
@@ -59,7 +59,7 @@ cd backend
 
 npm install
 
-npm start
+npm run dev
 
 ```
 
@@ -97,4 +97,4 @@ npm start
 
 ![Metro-Bundler](https://github.com/JoseVitor-1337/be-the-hero/blob/master/expo.png)
 
-### Open the **expo app** in your mobile device and read this QR Code.
+### Open the **expo app** in your mobile device and read this QR Code. Or you can use a emulator
