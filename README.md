@@ -31,7 +31,7 @@
 
 > Need have **expo-cli** installed [Go Here to install](https://docs.expo.io/)
 
-> Need have **expo app** in your mobile device.
+> Need have **expo app** in your mobile device, or use a **emulator**.
 
 <br />
 
