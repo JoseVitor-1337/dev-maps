@@ -17,11 +17,7 @@
 - Expo
 - React native
 
-<br />
-
 ## How do I start this site?
-
-<br />
 
 ## Prerequisites
 
@@ -33,11 +29,8 @@
 
 > Need have **expo app** in your mobile device, or use a **emulator**.
 
-<br />
-
 ## Follow theses steps
 
-<br>
 
 Open you Terminal and run this commands:
 
@@ -47,8 +40,6 @@ git clone https://github.com/JoseVitor-1337/be-the-hero.git
 cd dev-radar
 
 ```
-
-<br>
 
 ## To Start Back End
 
@@ -63,7 +54,6 @@ npm run dev
 
 ```
 
-<br>
 
 ## To Start Front End (Web)
 
@@ -77,14 +67,12 @@ npm install
 npm start
 
 ```
-
-<br>
-
 ## To Start Mobile
 
 Open the **mobile** folder in your terminal and run:
 
 ```
+
 cd mobile
 
 npm install
